@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wildebeest from COTW game (without horns)
+* source:	https://sketchfab.com/3d-models/wildebeest-from-cotw-game-without-horns-7dd61beb2e8a4d8a83f6539e66acb331
+* author:	Game-animal ripper (https://sketchfab.com/game-ripper)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wildebeest from COTW game (without horns)" (https://sketchfab.com/3d-models/wildebeest-from-cotw-game-without-horns-7dd61beb2e8a4d8a83f6539e66acb331) by Game-animal ripper (https://sketchfab.com/game-ripper) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
