@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Visualización AR - León, Ñu y Lobo</title>
+    <title>Visualización AR - León, Ñu y Lobo (sin marcador)</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <style>
         body {
             margin: 0;
@@ -14,37 +14,43 @@
 </head>
 <body>
     
-    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
-
+    <a-scene
+        vr-mode-ui="enabled: false"
+        embedded
+        arjs="sourceType: webcam; debugUIEnabled: false;">
+        
+        <!-- Cámara principal -->
         <a-entity camera></a-entity>
 
+        <!-- Fondo -->
         <a-sky src="cielo-nublado.jpg"></a-sky>
 
-        <a-marker preset="hiro">
+        <!-- Suelo -->
+        <a-plane position="0 -1 0" rotation="-90 0 0" width="30" height="20" repeat="40 40" src="piedra.jpg" shadow></a-plane>
 
-            <a-plane position="0 0 0" rotation="-90 0 0" width="30" height="20" repeat="40 40" src="piedra.jpg" shadow></a-plane>
+        <!-- León -->
+        <a-entity id="lion" position="-2 0 -5" scale="0.8 0.8 0.8"
+                  sound="src: Audios/lion.mp3; autoplay: true; loop: true; volume: 1"
+                  gltf-model="lion/scene.gltf"
+                  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+        </a-entity>
 
-            <a-entity id="lion" position="-1 0 0" scale="0.8 0.8 0.8"
-                      sound="src: Audios/lion.mp3; autoplay: true; loop: true; volume: 1"
-                      gltf-model="lion/scene.gltf"
-                      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
-            </a-entity>
+        <!-- Ñu -->
+        <a-entity id="wildebeest" position="0 0 -5" scale="0.8 0.8 0.8"
+                  sound="src: Audios/ñu.mp3; autoplay: true; loop: true; volume: 1"
+                  gltf-model="wildebeest/scene.gltf"
+                  animation="property: position; dir: alternate; dur: 2000; loop: true; to: 0 0.5 -5">
+        </a-entity>
 
-            <a-entity id="wildebeest" position="0 0 0" scale="0.8 0.8 0.8"
-                      sound="src: Audios/ñu.mp3; autoplay: true; loop: true; volume: 1"
-                      gltf-model="wildebeest/scene.gltf"
-                      animation="property: position; dir: alternate; dur: 2000; loop: true; to: 0 0.1 0">
-            </a-entity>
-
-            <a-entity id="wolf" position="1 0 0" scale="0.01 0.01 0.01"
-                      sound="src: Audios/wolf.mp3; autoplay: true; loop: true; volume: 1"
-                      gltf-model="wolf/scene.gltf"
-                      animation="property: scale; dir: alternate; dur: 1500; loop: true; to: 0.03 0.03 0.03">
-            </a-entity>
-
-        </a-marker>
+        <!-- Lobo -->
+        <a-entity id="wolf" position="2 0 -5" scale="0.01 0.01 0.01"
+                  sound="src: Audios/wolf.mp3; autoplay: true; loop: true; volume: 1"
+                  gltf-model="wolf/scene.gltf"
+                  animation="property: scale; dir: alternate; dur: 1500; loop: true; to: 0.03 0.03 0.03">
+        </a-entity>
 
     </a-scene>
 
 </body>
 </html>
+
